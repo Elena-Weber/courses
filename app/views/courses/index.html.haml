@@ -1,29 +1,33 @@
-%h1
-  Coursella - The platform that can teach you anything
-%h2
-  Number of courses in the database:
-  = @courses.count
-
-%table.table
-  %thead
-    %tr
-      %th Course
-      %th Description
-      %th
-      %th
-      %th
-
-  %tbody
-    - @courses.each do |course|
+%div.my-3
+  %h1
+    Coursella - The platform that can teach you anything
+  %h2
+    Number of courses in the database:
+    = @courses.count
+%div.container
+  %table.table
+    %thead
       %tr
-        %td= course.title
-        %td= course.description
-        %td= link_to 'More', course
-        %td= link_to 'Edit', edit_course_path(course)
-        %td= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' }
+        %th Course
+        %th Description
+        %th
+        %th
+        %th
 
-%br
+    %tbody
+      - @courses.each do |course|
+        %tr
+          %td= course.title
+          %td= course.description
+          %td= link_to 'More', course
+          %td= link_to 'Edit', edit_course_path(course)
+          %td= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' }
 
-= link_to 'Create a new course', new_course_path
-<i class="fa fa-address-book"></i>
-<i class="fa fa-github"></i>
+  %br
+
+  = link_to 'Create a new course', new_course_path
+  <i class="fa fa-address-book"></i>
+  <i class="fa fa-credit-card"></i>
+  <i class="fa fa-graduation-cap"></i>
+  <i class="fa fa-trophy"></i>
+  <i class="fa fa-user-circle-o"></i>
