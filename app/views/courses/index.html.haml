@@ -1,0 +1,23 @@
+%h1 Coursella - The platform that can teach you anything
+
+%table.table
+  %thead
+    %tr
+      %th Course
+      %th Description
+      %th
+      %th
+      %th
+
+  %tbody
+    - @courses.each do |course|
+      %tr
+        %td= course.title
+        %td= course.description
+        %td= link_to 'More', course
+        %td= link_to 'Edit', edit_course_path(course)
+        %td= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'Create a new course', new_course_path
