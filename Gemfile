@@ -29,6 +29,7 @@ gem 'simple_form'
 gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
+gem 'faker'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
