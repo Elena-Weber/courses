@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.6'
 
+gem 'nokogiri'
+gem 'rack', '~> 2.0.1'
+gem 'rspec'
+# gem 'sprockets-rails', :require => 'sprockets/railtie'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.6'
 # Use postgresql as the database for Active Record
@@ -26,8 +30,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 gem "haml-rails", "~> 2.0"
 gem 'simple_form'
-gem 'bootstrap', '~> 5.1.3'
-gem 'jquery-rails'
+# gem 'bootstrap', '~> 5.1.3'
+# gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'faker'
 gem 'devise'

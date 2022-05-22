@@ -9,15 +9,14 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "trix"
 import "@rails/actiontext"
+import 'bootstrap'
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-//= require bootstrap
-//= require jquery3
-//= require popper
-
+// require("@rails/ujs").start()
+// require("channels")
 
 require("trix")
 require("@rails/actiontext")
