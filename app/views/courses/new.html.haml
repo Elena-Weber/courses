@@ -1,5 +1,7 @@
-%h1 Create a new course
+.card.m-4
+  .card-header
+    %h1 Create a new course
+  .card-body
+    = render 'form'
 
-= render 'form'
-
-= link_to 'Home', courses_path
+= link_to 'All courses', courses_path

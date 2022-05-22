@@ -1,35 +1,10 @@
 %div.my-3
   %h1
-    We can teach you anything: rare, unique and totally unbelievable!
+    We can teach you any skill: rare, unique, and totally unbelievable!
   %h2
     Number of available courses in the database:
     = @courses.count
-%div.container
-  %table.table
-    %thead
-      %tr
-        %th Course
-        %th Description
-        %th Teacher
-        %th
-        %th
-        %th
-
-    %tbody
-      - @courses.each do |course|
-        %tr
-          %td= course.title
-          %td= course.description
-          %td= course.user
-          %td= link_to 'Learn more', course
-          %td= link_to 'Edit', edit_course_path(course)
-          %td= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' }
-
-  %br
-
-  = link_to 'Create a new course', new_course_path
-  <i class="fa fa-address-book"></i>
-  <i class="fa fa-credit-card"></i>
-  <i class="fa fa-graduation-cap"></i>
-  <i class="fa fa-trophy"></i>
-  <i class="fa fa-user-circle-o"></i>
+.row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-4
+  - @courses.each do |course|
+    = render 'courses/course', course: course
+%br

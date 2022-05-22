@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  skip_before_action :authenticate_user!, :only => [:welcome, :index]
   before_action :set_course, only: %i[ show edit update destroy ]
 
   # GET /courses or /courses.json
@@ -10,6 +11,12 @@ class CoursesController < ApplicationController
     end
   end
 
+# page available for guests
+  def welcome
+      @courses = Course.all.limit(3)
+      @latest_courses = Course.all.limit(3).order(created_at: :desc)
+  end
+  
   # GET /courses/1 or /courses/1.json
   def show
   end

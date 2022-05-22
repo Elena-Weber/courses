@@ -1,0 +1,65 @@
+.div.py-2
+  .display-4
+    What would you like to learn today?
+
+  .p-4
+
+  .form-inline.my-2.my-lg-0
+    = form_tag(courses_path, method: :get) do
+      .input-group
+        = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
+        %span.input-group-append
+          %button.btn.btn-primary.btn-sm{:type => "submit"}
+            %span.fa.fa-search{"aria-hidden" => "true"}
+
+.card-group
+  .card.text-center.card-body
+    %h1
+      .fa.fa-graduation-cap
+    = Course.count
+    online courses
+    .row
+    Explore a variety of topics
+  .card.text-center.card-body
+    %h1
+      .fa.fa-user-o
+    = Course.distinct.count(:user_id)
+    experienced instructors
+    .row
+    Find your perfect teacher
+  .card.text-center.card-body
+    %h1
+      .fa.fa-user-secret
+    = User.count
+    active learners
+    .row
+    Join our supportive community
+  .card.text-center.card-body
+    %h1
+      .fa.fa-key
+    Lifetime access
+    .row
+    Learn at your pace
+
+%hr
+%h2
+  Most popular courses
+.row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-4
+  - @courses.each do |course|
+    = render 'courses/course', course: course
+
+%hr
+%h2 
+  Top rated courses
+.row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-4
+  - @courses.each do |course|
+    = render 'courses/course', course: course
+
+%hr
+%h2 
+  Latest courses
+.row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-4
+  - @courses.each do |course|
+    = render 'courses/course', course: course
+
+%hr
