@@ -1,8 +1,8 @@
 %div.my-3
   %h1
-    Coursella - The platform that can teach you anything
+    We can teach you anything: rare, unique and totally unbelievable!
   %h2
-    Number of courses in the database:
+    Number of available courses in the database:
     = @courses.count
 %div.container
   %table.table
@@ -10,7 +10,7 @@
       %tr
         %th Course
         %th Description
-        %th User
+        %th Teacher
         %th
         %th
         %th
@@ -21,7 +21,7 @@
           %td= course.title
           %td= course.description
           %td= course.user
-          %td= link_to 'More', course
+          %td= link_to 'Learn more', course
           %td= link_to 'Edit', edit_course_path(course)
           %td= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' }
 
