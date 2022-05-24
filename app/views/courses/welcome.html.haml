@@ -24,14 +24,14 @@
     %h1
       .fa.fa-user-o
     = Course.distinct.count(:user_id)
-    experienced instructors
+    experienced instructor(s)
     .row
     Find your perfect teacher
   .card.text-center.card-body
     %h1
       .fa.fa-user-secret
     = User.count
-    active learners
+    active learner(s)
     .row
     Join our supportive community
   .card.text-center.card-body
