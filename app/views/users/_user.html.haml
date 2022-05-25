@@ -1,0 +1,30 @@
+.col
+  .card.h-100
+    .card-header
+      .fa.fa-user-circle-o
+      = link_to user.email, user_path(user)
+    .card-body
+    //   = course.description
+    .card-footer
+      .fa.fa-clock-o
+      Signed up
+      = time_ago_in_words(user.created_at)
+      ago
+    .card-footer
+      = 'sign_in_count'.humanize
+      = user.sign_in_count
+      .row
+      = 'current_sign_in_at'.humanize
+      = user.current_sign_in_at
+      .row
+      = 'last_sign_in_at'.humanize
+      = user.last_sign_in_at
+      .row
+      = 'current_sign_in_ip'.humanize
+      = user.current_sign_in_ip
+      .row
+      = 'last_sign_in_ip'.humanize
+      = user.last_sign_in_ip
+    //   = link_to 'Learn more', user, class: 'btn btn-sm btn-primary'
+    //   = link_to 'Edit', edit_user_path(user), class: 'btn btn-sm btn-warning'
+    //   = link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }, class: 'btn btn-sm btn-danger'
