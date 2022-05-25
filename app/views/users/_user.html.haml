@@ -1,8 +1,8 @@
 .col
-  .card.h-100
+  .card.h-100.mt-3
     .card-header
       .fa.fa-user-circle-o
-      = link_to user.email, user_path(user)
+      = user.email
     .card-body
     //   = course.description
     .card-footer
@@ -25,6 +25,12 @@
       .row
       = 'last_sign_in_ip'.humanize
       = user.last_sign_in_ip
+    .card-footer
+      Confirmed email?
+      - if user.confirmed_at.present?
+        .badge.bg-success Yes
+      - else
+        .badge.bg-danger No
     //   = link_to 'Learn more', user, class: 'btn btn-sm btn-primary'
     //   = link_to 'Edit', edit_user_path(user), class: 'btn btn-sm btn-warning'
     //   = link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }, class: 'btn btn-sm btn-danger'
