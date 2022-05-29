@@ -14,5 +14,6 @@
 @import "font-awesome";
 @import './actiontext.scss';
 
+// removes a green tick from select inputs
 .form-control.is-invalid{ background-image: none; }
 .form-control.is-valid{ background-image: none; }

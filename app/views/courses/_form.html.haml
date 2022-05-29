@@ -4,14 +4,15 @@
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs
-    = f.input :title
-    = f.input :short_description
-    = f.label :description
+    = f.input :title, label: "Add the title"
+    = f.input :short_description, label: "Add the short description"
+    // = f.label :description
+    = f.label "Add the important details"
     = f.rich_text_area :description
     %small= f.error :description, class: 'text-danger'
-    = f.input :language, collection: ["English", "German", "Italian", "French", "Spanish", "Russian"], prompt: "Select the language"
-    = f.input :level, collection: ["Beginner", "Intermediate", "Advanced"], prompt: "Select the level", selected: "Intermediate"
-    = f.input :price
+    = f.input :language, collection: Course.languages, include_blank: true, selected: "blank", label: "Select the language"
+    = f.input :level, collection: Course.levels, include_blank: true, selected: "blank", label: "Select the level"
+    = f.input :price, label: "Set the price in $ (0 means the course is free of charge)"
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, class: 'mt-4 mb-2'

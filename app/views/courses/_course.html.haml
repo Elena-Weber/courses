@@ -4,29 +4,26 @@
       .fa.fa-book
       = link_to course.title, course_path(course)
     .card-body
-      %small= simple_format(course.short_description)
-    .card-body
+      = simple_format(course.short_description)
       = course.description
     .card-footer
-      .text-center
-        = number_to_currency(course.price)
-    .card-footer
       .row
-        .col-md-6
+        .col-md-4.text-center
           .fa.fa-language
           = course.language
-        .col-md-6
-          .text-right
-            .fa.fa-signal
-            = course.level
+        .col-md-5.text-center
+          .fa.fa-signal
+          = course.level
+        .col-md-3.text-center
+          = number_to_currency(course.price)
     .card-footer
       .fa.fa-clock-o
       Created on:
       = course.created_at.strftime('%d-%b-%Y')
-      // .row
-      // .fa.fa-user-o
-      // Teacher:
-      // = course.user
+      .row
+      .fa.fa-user-o
+      Teacher:
+      = course.user.username
     .card-footer
       = link_to 'Learn more', course, class: 'btn btn-sm btn-primary'
       = link_to 'Edit', edit_course_path(course), class: 'btn btn-sm btn-warning'
