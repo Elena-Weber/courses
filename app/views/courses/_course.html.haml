@@ -4,7 +4,21 @@
       .fa.fa-book
       = link_to course.title, course_path(course)
     .card-body
+      %small= simple_format(course.short_description)
+    .card-body
       = course.description
+    .card-footer
+      .text-center
+        = number_to_currency(course.price)
+    .card-footer
+      .row
+        .col-md-6
+          .fa.fa-language
+          = course.language
+        .col-md-6
+          .text-right
+            .fa.fa-signal
+            = course.level
     .card-footer
       .fa.fa-clock-o
       Created on:
@@ -16,4 +30,4 @@
     .card-footer
       = link_to 'Learn more', course, class: 'btn btn-sm btn-primary'
       = link_to 'Edit', edit_course_path(course), class: 'btn btn-sm btn-warning'
-      = link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }, class: 'btn btn-sm btn-danger'
+      = link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure you want to delete the course?' }, class: 'btn btn-sm btn-danger'

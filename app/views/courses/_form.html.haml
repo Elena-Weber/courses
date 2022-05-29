@@ -5,9 +5,13 @@
 
   .form-inputs
     = f.input :title
-    // = f.input :description
+    = f.input :short_description
     = f.label :description
     = f.rich_text_area :description
+    %small= f.error :description, class: 'text-danger'
+    = f.input :language, collection: ["English", "German", "Italian", "French", "Spanish", "Russian"], prompt: "Select the language"
+    = f.input :level, collection: ["Beginner", "Intermediate", "Advanced"], prompt: "Select the level", selected: "Intermediate"
+    = f.input :price
 
   .form-actions
     = f.button :submit

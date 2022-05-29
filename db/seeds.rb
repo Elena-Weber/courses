@@ -8,10 +8,16 @@
 
 # User.create!(email: 'redlilith@andex.ru', password: 'hermina', password_confirmation: 'hermina')
 
+Course.destroy_all
+
 10.times do
   Course.create!([{
-    title: Faker::Educator.course_name,
+    title: Faker::Educator.subject,
     description: Faker::Lorem.paragraphs(number: 1),
+    short_description: Faker::Lorem.paragraph(sentence_count: 1),
+    language: ["English", "German", "Italian", "French", "Spanish", "Russian"].sample,
+    level: ["Beginner", "Intermediate", "Advanced"].sample,
+    price: rand(1..30),
     user_id: User.first.id
   }])
 end
