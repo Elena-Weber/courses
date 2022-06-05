@@ -1,9 +1,10 @@
 %div.my-3
-  %h1
+  %h1.text-center
     We can teach you any skill: rare, unique, and totally unbelievable!
-  %h2
+  %h2.text-center
     Number of available courses in the database:
-    = @courses.count
+    .badge.bg-secondary
+      = @courses.count
 .row
   .col-md-2
     = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|

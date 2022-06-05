@@ -1,15 +1,15 @@
 .div.py-2
-  .display-4
+  .display-4.text-center
     What would you like to learn today?
 
   .p-4
 
-  .form-inline.my-2.my-lg-0
-    = form_tag(courses_path, method: :get) do
+  - if current_user
+    = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
       .input-group
-        = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
+        = f.search_field :title_or_short_description_cont, class: 'form-control', placeholder: 'Search for a course or topic', :autocomplete => :off
         %span.input-group-append
-          %button.btn.btn-primary.btn-sm{:type => "submit"}
+          %button.btn.btn-outline-success.mx-2{:type => "submit"}
             %span.fa.fa-search{"aria-hidden" => "true"}
 
 .card-group

@@ -14,6 +14,10 @@ class CoursesController < ApplicationController
       @latest_courses = Course.all.limit(3).order(created_at: :desc)
   end
   
+  def activity
+    @activities = PublicActivity::Activity.all
+  end
+  
   # GET /courses/1 or /courses/1.json
   def show
   end
