@@ -17,17 +17,12 @@
           = link_to users_path, class: 'nav-link' do
             .fa.fa-user-circle
             Users
-      .form-inline.my-2.my-lg-0
-        = form_tag(courses_path, method: :get) do
-          .input-group
-            = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search", type: "search", class: 'form-control'
-            %span.input-group-append
-              %button.btn.btn-outline-success.mx-2{:type => "submit"}
-                %span.fa.fa-search{"aria-hidden" => "true"}
-      // %form.d-flex
-      //   %input.form-control.me-2{"aria-label" => "Search", placeholder: "Search", type: "search"}/
-      //   %button.btn.btn-outline-success{type: "submit"}
-      //     %span.fa.fa-search{"aria-hidden" => "true"}
+      = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+        .input-group
+          = f.search_field :title_or_short_description_cont, class: 'form-control', placeholder: 'Search', :autocomplete => :off
+          %span.input-group-append
+            %button.btn.btn-outline-success.mx-2{:type => "submit"}
+              %span.fa.fa-search{"aria-hidden" => "true"}
       %ul.navbar-nav.mr-right
         %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_course_path)}"}
           = link_to new_course_path, class: 'nav-link' do
