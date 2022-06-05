@@ -8,12 +8,13 @@ class CoursesController < ApplicationController
     @courses = @ransack_courses.result.includes(:user)
   end
 
-# page available for guests
+# welcome page available for guests
   def welcome
       @courses = Course.all.limit(3)
       @latest_courses = Course.all.limit(3).order(created_at: :desc)
   end
   
+  # CRUD tracker
   def activity
     @activities = PublicActivity::Activity.all
   end
