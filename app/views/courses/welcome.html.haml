@@ -11,7 +11,7 @@
         %span.input-group-append
           %button.btn.btn-outline-success.mx-2{:type => "submit"}
             %span.fa.fa-search{"aria-hidden" => "true"}
-
+%br
 .card-group
   .card.text-center.card-body
     %h1
@@ -41,25 +41,25 @@
     .row
     Learn at your pace
 
-%hr
+%br
 %h2
   Most popular courses
 .row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-4
   - @courses.each do |course|
     = render 'courses/course', course: course
 
-%hr
+%br
 %h2 
   Top rated courses
 .row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-4
   - @courses.each do |course|
     = render 'courses/course', course: course
 
-%hr
+%br
 %h2 
   Latest courses
 .row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-4
   - @courses.each do |course|
     = render 'courses/course', course: course
 
-%hr
+%br
