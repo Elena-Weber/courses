@@ -2,7 +2,7 @@
   .card.h-100.mt-3
     .card-header
       .fa.fa-user-circle-o
-      // = user.email
+      = user.username
     .card-body
     //   = course.description
     .card-footer
@@ -31,6 +31,11 @@
         .badge.bg-success Yes
       - else
         .badge.bg-danger No
+    .card-footer
+      - user.roles.each do |role|
+        .badge.bg-secondary
+          = role.name
+      = link_to 'Edit roles', edit_user_path(user), class: 'btn btn-sm btn-warning'
     //   = link_to 'Learn more', user, class: 'btn btn-sm btn-primary'
     //   = link_to 'Edit', edit_user_path(user), class: 'btn btn-sm btn-warning'
     //   = link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }, class: 'btn btn-sm btn-danger'
