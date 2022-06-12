@@ -11,6 +11,9 @@ class User < ApplicationRecord
   validate :must_have_a_role, on: :update
   
   has_many :courses
+  
+  extend FriendlyId
+  friendly_id :email, use: :slugged
          
   def to_s
     email

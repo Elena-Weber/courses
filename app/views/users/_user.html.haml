@@ -2,7 +2,7 @@
   .card.h-100.mt-3
     .card-header
       .fa.fa-user-circle-o
-      = user.username
+      = link_to user.username, user_path(user)
     .card-body
     //   = course.description
     .card-footer

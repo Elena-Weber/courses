@@ -1,7 +1,7 @@
 %p
 = link_to 'Users', users_path
 \/
-// = link_to @user, user_path(@user)
+= link_to @user.username, user_path(@user)
 
 %p
 = render 'users/user', user: @user
