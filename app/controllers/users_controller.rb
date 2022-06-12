@@ -15,10 +15,12 @@ class UsersController < ApplicationController
   
     # GET /users/1/edit
   def edit
+    authorize @user
   end
   
   # PATCH/PUT /users/1 or /users/1.json
   def update
+    authorize @user
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to user_url(@user), notice: "Yay! The user has been successfully updated." }
@@ -32,8 +34,8 @@ class UsersController < ApplicationController
 
   # DELETE /courses/1 or /courses/1.json
   def destroy
+    authorize @user
     @user.destroy
-
     respond_to do |format|
       format.html { redirect_to users_url, notice: "The user has been successfully deleted." }
       format.json { head :no_content }
