@@ -17,6 +17,10 @@
         .col-md-3.text-center
           = number_to_currency(course.price)
     .card-footer
+      .fa.fa-list-ol
+      Number of lessons in the course:
+      = course.lessons.count
+    .card-footer
       .fa.fa-clock-o
       Created on:
       = course.created_at.strftime('%d-%b-%Y')
