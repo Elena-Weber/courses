@@ -10,3 +10,4 @@
   .col-lg-6
     - @lessons.each do |lesson|
       = render 'lessons/lesson', lesson: lesson
+    = link_to 'Add lesson', new_lesson_path(course_id: @course.id)
