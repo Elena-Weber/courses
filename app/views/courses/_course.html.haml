@@ -27,7 +27,8 @@
       .row
       .fa.fa-user-o
       Teacher:
-      = course.user.username
+      // = course.user.username
+      = link_to course.user.username, user_path(course.user)
     - if current_user
       - if policy(course).edit?
         .card-footer

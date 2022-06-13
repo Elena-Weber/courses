@@ -1,4 +1,7 @@
 class Lesson < ApplicationRecord
+  
+  has_rich_text :content
+  
   belongs_to :course
   
   validates :title, :content, :course, presence: true
