@@ -13,7 +13,7 @@ Rails.application.configure do
   config.eager_load = true
   
   config.action_mailer.default_url_options = { :host => 'coursella.herokuapp.com', :protocol => 'https' }
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :sendmail
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_caching = false
@@ -21,7 +21,7 @@ Rails.application.configure do
   Rails.application.config.middleware.use ExceptionNotification::Rack,
   email: {
     email_prefix: '[PREFIX] ',
-    sender_address: %{"coursella error" <support@coursella.com>},
+    sender_address: %{"coursella error" <support@coursella.herokuapp.com>},
     exception_recipients: %w{elenaweber.d@gmail.com}
   }
 
