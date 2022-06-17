@@ -4,10 +4,10 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   config.hosts << "59d01beaaab04f9993583e9b2cac05d0.vfs.cloud9.us-east-1.amazonaws.com"
   config.action_mailer.default_url_options = { host: 'https://59d01beaaab04f9993583e9b2cac05d0.vfs.cloud9.us-east-1.amazonaws.com' }
-  config.action_mailer.delivery_method = :sendmail
+  # config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  # config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_caching = false
 
   Rails.application.config.middleware.use ExceptionNotification::Rack,
