@@ -41,6 +41,7 @@ gem 'public_activity'
 gem "rolify"
 gem "pundit"
 gem 'exception_notification'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
